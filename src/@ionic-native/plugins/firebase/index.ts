@@ -36,6 +36,61 @@ import { Observable } from 'rxjs/Observable';
 export class Firebase extends IonicNativePlugin {
 
   /**
+   * Watches for changes at a database location and returns the children at the given path anytime changes are made
+   * @return {Observable<any[]>}
+   */
+  @Cordova({
+    observable: true
+  })
+  observeList(path: string): Observable<any[]> { return; }
+
+  /**
+   * Watches for changes at a database location and returns the object at the given path anytime changes are made
+   * @return {Observable<any[]>}
+   */
+  @Cordova({
+    observable: true
+  })
+  observeObject(path: string): Observable<any[]> { return; }
+
+  /**
+   * Creates a new child at a Firebase Database location
+   * @param path The path where the new child should be created
+   * @param data The data to write to the new child location
+   * @return {Promise<any>}
+   */
+  @Cordova()
+  createValue(path: string, data: any): Promise<any> { return; }
+
+  /**
+   * Writes data to a Firebase Database location. This will overwrite any data at this location and all child locations.
+   * @param path A string representing the path of the database location
+   * @param data The data to write to the location
+   * @return {Promise<any>}
+   */
+  @Cordova()
+  setValue(path: string, data: any): Promise<any> { return; }
+
+  /**
+   * Removes the data at a Firebase Database location. Any data at child locations will also be deleted
+   * @param path A string representing the path of the database location
+   * @param data The data to write to the location
+   * @return {Promise<any>}
+   */
+  @Cordova()
+  removeValue(path: string, data: any): Promise<any> { return; }
+
+  /**
+   * Get the device token
+   * @param cacheSize The maximum size (MB) of the offline cache
+   * @return {Promise<any>}
+   */
+  @Cordova({
+    callbackOrder: 'reverse'
+  })
+  enableDatabasePersistence(cacheSize?: number): Promise<any> { return; }
+
+  /**
    * Get the device token
    * @return {Promise<any>}
    */
@@ -232,3 +287,6 @@ export class Firebase extends IonicNativePlugin {
   setDefaults(defaults: any, namespace: string): Promise<any> { return; }
 
 }
+
+
+
